@@ -7,7 +7,7 @@ try {
             if (tab.url.includes("https://spelltable.wizards.com/game/")) {
                 chrome.scripting.executeScript({
                     target: { tabId: tabId },
-                    files: ['contentScriptPlanarDeck.js']
+                    files: ['contentScript.js']
                 }).then(() => console.log("injected script file"));
             }
         }
@@ -17,3 +17,12 @@ try {
 } catch (e) {
     console.log(e);
 }
+
+chrome.action.onClicked.addListener((tab) => {
+  chrome.scripting.executeScript({
+    target: { tabId: tab.id },
+    func: () => {
+      window.postMessage({ type: "TOGGLE_PLANECHASE" }, "*");
+    }
+  });
+});

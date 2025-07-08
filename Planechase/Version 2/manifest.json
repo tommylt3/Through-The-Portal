@@ -1,34 +1,26 @@
 {
-    "name": "Planechase",
-    "version": "0.20",
-    "description": "-",
-    "content_scripts": [
-        {
-            "matches": [
-                "<all_urls>"
-            ],
-            "css": [
-                "contentScript.css"
-            ],
-            "run_at": "document_end"
-        }
-    ],
-    "background": {
-        "service_worker": "background.js"
-    },
-    "action": {
-        "default_icon": {
-            "16": "chase.png",
-            "48": "chase.png",
-            "128": "chase.png"
-        }
-    },
-    "host_permissions": [
-        "<all_urls>"
-    ],
-    "permissions": [
-        "activeTab",
-        "scripting"
-    ],
-    "manifest_version": 3
+  "manifest_version": 3,
+  "name": "Through The Portal",
+  "version": "2.0",
+  "permissions": ["scripting", "tabs"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://spelltable.wizards.com/game/*"],
+      "js": ["contentScript.js"],
+      "css": ["contentScript.css"]
+    }
+  ],
+  "action": {
+    "default_title": "Through The Portal"
+  },
+  "icons": {
+    "16": "chase.png",
+    "32": "chase.png",
+    "48": "chase.png",
+    "128": "chase.png"
+  }                     
 }
