@@ -88,5 +88,5 @@ app.delete('/deck/:lobbyId', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Planechase API running at http://localhost:${port}`);
+  console.log(`Planechase API running`);
 });

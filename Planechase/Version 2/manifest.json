@@ -3,7 +3,7 @@
   "name": "Through The Portal",
   "version": "2.0",
   "permissions": ["scripting", "tabs"],
-  "host_permissions": ["<all_urls>"],
+  "host_permissions": ["https://spelltable.wizards.com/*","https://ttp.tgsworkshop.com/*"],
   "background": {
     "service_worker": "background.js"
   },

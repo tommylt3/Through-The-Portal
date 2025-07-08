@@ -1,7 +1,7 @@
 if (!window.__planechase_initialized__) {
   window.__planechase_initialized__ = true;
 
-  const API_BASE = 'http://localhost:3000';
+  const API_BASE = 'https://ttp.tgsworkshop.com';
   const lobbyId = window.location.href.split('/').pop();
 
   let allPlaneCards = [];
